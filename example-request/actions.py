@@ -1,3 +1,5 @@
+import json
+
 from typing import Optional
 from robocorp.actions import action, Request
 
@@ -17,4 +19,4 @@ def print_request(request: Request) -> str:
     for key in cookies:
         print(f"🍪 {key}: {cookies[key]}")
 
-    return "Hello"
+    return json.dumps(request.headers, indent=4)
